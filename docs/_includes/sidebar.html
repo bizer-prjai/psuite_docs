@@ -1,24 +1,76 @@
 <div class="sidebar-inner">
-  <div class="sidebar-section">
-    <div class="sidebar-title">はじめに</div>
-    {% assign section = site.data.sitemap.sections | where: 'slug', 'getting-started' | first %}
-    {% include nav_list.html items=section.items %}
-  </div>
-  <div class="sidebar-section">
-    <div class="sidebar-title">機能ガイド</div>
-    {% assign section = site.data.sitemap.sections | where: 'slug', 'features' | first %}
-    {% include nav_list.html items=section.items %}
-  </div>
-  <div class="sidebar-section">
-    <div class="sidebar-title">API リファレンス</div>
-    {% assign section = site.data.sitemap.sections | where: 'slug', 'api' | first %}
-    {% include nav_list.html items=section.items %}
-  </div>
-  <div class="sidebar-section">
-    <div class="sidebar-title">トラブルシューティング</div>
-    {% assign section = site.data.sitemap.sections | where: 'slug', 'troubleshooting' | first %}
-    {% include nav_list.html items=section.items %}
-  </div>
+  {% comment %} 現在ページの位置 {% endcomment %}
+  {% assign page_segs = page.dir | split: '/' %}
+  {% assign current_top = page_segs[1] %}
+  {% assign current_sub = page_segs[2] %}
+
+  {% assign pages = site.pages | sort: 'path' %}
+  {% assign last_top = '' %}
+  {% assign last_sub = '' %}
+
+  <nav class="nav-tree">
+  {% for p in pages %}
+    {% if p.path contains '.md' and p.url != '/' %}
+      {% assign segs = p.dir | split: '/' %}
+      {% assign top = segs[1] %}
+      {% assign sub = segs[2] %}
+
+      {% assign skip = false %}
+      {% if top == nil or top == '' or top == 'assets' or top contains '_' %}
+        {% assign skip = true %}
+      {% endif %}
+      {% if skip %}{% continue %}{% endif %}
+
+      {% comment %} トップディレクトリ開始 {% endcomment %}
+      {% if top != last_top %}
+        {% if last_top != '' %}
+            </ul>
+          </details>
+        {% endif %}
+
+        {% assign section_data = site.data.sitemap.sections | where: 'slug', top | first %}
+        {% assign top_label = section_data.title | default: top | replace: '-', ' ' | capitalize %}
+        <details class="nav-dir" {% if top == current_top %}open{% endif %}>
+          <summary><span class="caret"></span><span class="icon folder"></span><span class="label">{{ top_label }}</span></summary>
+          <ul class="nav-list">
+        {% assign last_sub = '' %}
+      {% endif %}
+
+      {% comment %} サブディレクトリ開始（必要時） {% endcomment %}
+      {% if sub and sub != '' and sub != last_sub %}
+        {% capture path_slug %}{{ top }}/{{ sub }}{% endcapture %}
+        {% assign sub_label = sub | replace: '-', ' ' | capitalize %}
+        {% if section_data and section_data.items %}
+          {% assign match = section_data.items | where: 'slug', path_slug | first %}
+          {% if match %}{% assign sub_label = match.title %}{% endif %}
+        {% endif %}
+        {% if last_sub != '' %}
+              </ul>
+            </details>
+        {% endif %}
+        <details class="nav-subdir" {% if sub == current_sub and top == current_top %}open{% endif %}>
+          <summary><span class="caret"></span><span class="icon folder"></span><span class="label">{{ sub_label }}</span></summary>
+          <ul class="nav-list">
+        {% assign last_sub = sub %}
+      {% endif %}
+
+      {% if p.name != 'index.md' %}
+        <li class="nav-page"><span class="icon doc"></span><a href="{{ p.url | relative_url }}">{{ p.title | default: p.name | replace: '.md','' }}</a></li>
+      {% endif %}
+
+      {% assign last_top = top %}
+    {% endif %}
+  {% endfor %}
+
+  {% if last_sub != '' %}
+        </ul>
+      </details>
+  {% endif %}
+  {% if last_top != '' %}
+        </ul>
+      </details>
+  {% endif %}
+  </nav>
 </div>
 
 

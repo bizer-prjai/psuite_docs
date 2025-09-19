@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Jekyll build outputs
+docs/_site/
+docs/.jekyll-cache/
+docs/.sass-cache/
+
+# Bundler vendored gems (if used)
+docs/vendor/
+
+# Lockfile for local-only Docker bundling
+docs/Gemfile.lock
+
+

@@ -1,28 +1,19 @@
 ---
 title: ホーム
-description: PSuiteヘルプセンターのホーム
+layout: default
+permalink: /
 ---
 
-# PSuite Help Center
+<script>
+  window.location.replace('{{ "/zoom/how_to_use/" | relative_url }}');
+  // フォールバックリンク
+</script>
 
-PSuiteの使い方、機能ガイド、API、トラブルシューティングをまとめたヘルプサイトです。
-
-## セクション一覧
-
-### はじめに
-{% assign section = site.data.sitemap.sections | where: 'slug', 'getting-started' | first %}
-{% include nav_list.html items=section.items %}
-
-### 機能ガイド
-{% assign section = site.data.sitemap.sections | where: 'slug', 'features' | first %}
-{% include nav_list.html items=section.items %}
-
-### API リファレンス
-{% assign section = site.data.sitemap.sections | where: 'slug', 'api' | first %}
-{% include nav_list.html items=section.items %}
-
-### トラブルシューティング
-{% assign section = site.data.sitemap.sections | where: 'slug', 'troubleshooting' | first %}
-{% include nav_list.html items=section.items %}
+<p>
+  自動的に移動しない場合は
+  <a href="{{ "/zoom/how_to_use/" | relative_url }}">こちら</a>
+  をクリックしてください。
+  
+</p>
 
 
