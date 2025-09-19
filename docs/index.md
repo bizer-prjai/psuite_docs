@@ -5,13 +5,13 @@ permalink: /
 ---
 
 <script>
-  window.location.replace('{{ "/zoom/how_to_use/" | relative_url }}');
+  window.location.replace('{{ "/zoom/" | relative_url }}');
   // フォールバックリンク
 </script>
 
 <p>
   自動的に移動しない場合は
-  <a href="{{ "/zoom/how_to_use/" | relative_url }}">こちら</a>
+  <a href="{{ "/zoom/" | relative_url }}">こちら</a>
   をクリックしてください。
   
 </p>

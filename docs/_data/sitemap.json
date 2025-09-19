@@ -4,47 +4,21 @@
   "version": "1.0.0",
   "sections": [
     {
-      "title": "はじめに",
-      "slug": "getting-started",
+      "title": "Zoom予約システム",
+      "slug": "zoom",
       "items": [
-        { "title": "PSuiteとは", "slug": "getting-started/what-is-psuite" },
-        { "title": "初期設定", "slug": "getting-started/initial-setup" },
-        { "title": "基本的な使い方", "slug": "getting-started/basic-usage" }
+        { "title": "概要", "slug": "zoom/" },
+        { "title": "初期セットアップ", "slug": "zoom/setup" },
+        { "title": "アカウント管理", "slug": "zoom/accounts" },
+        { "title": "会議予約", "slug": "zoom/reservations" },
+        { "title": "セキュリティ", "slug": "zoom/security" },
+        { "title": "システム設定", "slug": "zoom/settings" },
+        { "title": "通知とメール", "slug": "zoom/notifications" },
+        { "title": "トラブルシューティング", "slug": "zoom/troubleshooting" },
+        { "title": "FAQ", "slug": "zoom/faq" }
       ]
     },
-    {
-      "title": "機能ガイド",
-      "slug": "features",
-      "items": [
-        {
-          "title": "ダッシュボード",
-          "slug": "features/dashboard",
-          "items": [
-            { "title": "概要画面", "slug": "features/dashboard/overview" },
-            { "title": "カスタマイズ", "slug": "features/dashboard/customization" }
-          ]
-        },
-        { "title": "プロジェクト管理", "slug": "features/project-management" },
-        { "title": "チーム機能", "slug": "features/team-features" }
-      ]
-    },
-    {
-      "title": "API リファレンス",
-      "slug": "api",
-      "items": [
-        { "title": "認証", "slug": "api/authentication" },
-        { "title": "プロジェクト API", "slug": "api/projects" },
-        { "title": "ユーザー API", "slug": "api/users" }
-      ]
-    },
-    {
-      "title": "トラブルシューティング",
-      "slug": "troubleshooting",
-      "items": [
-        { "title": "よくある質問", "slug": "troubleshooting/faq" },
-        { "title": "エラーコード一覧", "slug": "troubleshooting/error-codes" }
-      ]
-    }
+    { "title": "(非表示) 旧構成", "slug": "_legacy", "items": [] }
   ]
 }
 

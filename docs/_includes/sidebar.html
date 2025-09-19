@@ -36,8 +36,10 @@
         {% assign last_sub = '' %}
       {% endif %}
 
-      {% comment %} サブディレクトリ開始（必要時） {% endcomment %}
-      {% if sub and sub != '' and sub != last_sub %}
+      {% comment %} サブディレクトリ開始（必要時）。ただし配下が1ページのみならフラット表示 {% endcomment %}
+      {% assign subdir_pages = pages | where: 'dir', p.dir %}
+      {% assign subdir_pages_size = subdir_pages | size %}
+      {% if sub and sub != '' and sub != last_sub and subdir_pages_size > 1 %}
         {% capture path_slug %}{{ top }}/{{ sub }}{% endcapture %}
         {% assign sub_label = sub | replace: '-', ' ' | capitalize %}
         {% if section_data and section_data.items %}

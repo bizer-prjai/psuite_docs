@@ -14,14 +14,10 @@
         {% include sidebar.html %}
       </aside>
       <main class="content">
-        {{ content }}
+        <article class="md">
+          {{ content }}
+        </article>
       </main>
-      <aside class="toc">
-        <div class="toc-inner">
-          <div class="toc-title">アウトライン</div>
-          <nav id="toc-list"></nav>
-        </div>
-      </aside>
     </div>
     <footer class="footer">
       <div class="inner">© {{ site.time | date: '%Y' }} PSuite</div>
