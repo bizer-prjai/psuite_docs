@@ -1,0 +1,22 @@
+title: PSuite Help Center
+description: "PSuiteの使い方とトラブルシューティングガイド"
+url: https://help.psuite.ai
+baseurl: ""
+
+# Markdown/Permalink settings
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: pretty
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+exclude:
+  - README.md
+
+

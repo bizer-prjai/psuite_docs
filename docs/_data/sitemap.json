@@ -1,0 +1,51 @@
+{
+  "title": "PSuite ヘルプセンター",
+  "description": "PSuiteの使い方とトラブルシューティングガイド",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "はじめに",
+      "slug": "getting-started",
+      "items": [
+        { "title": "PSuiteとは", "slug": "getting-started/what-is-psuite" },
+        { "title": "初期設定", "slug": "getting-started/initial-setup" },
+        { "title": "基本的な使い方", "slug": "getting-started/basic-usage" }
+      ]
+    },
+    {
+      "title": "機能ガイド",
+      "slug": "features",
+      "items": [
+        {
+          "title": "ダッシュボード",
+          "slug": "features/dashboard",
+          "items": [
+            { "title": "概要画面", "slug": "features/dashboard/overview" },
+            { "title": "カスタマイズ", "slug": "features/dashboard/customization" }
+          ]
+        },
+        { "title": "プロジェクト管理", "slug": "features/project-management" },
+        { "title": "チーム機能", "slug": "features/team-features" }
+      ]
+    },
+    {
+      "title": "API リファレンス",
+      "slug": "api",
+      "items": [
+        { "title": "認証", "slug": "api/authentication" },
+        { "title": "プロジェクト API", "slug": "api/projects" },
+        { "title": "ユーザー API", "slug": "api/users" }
+      ]
+    },
+    {
+      "title": "トラブルシューティング",
+      "slug": "troubleshooting",
+      "items": [
+        { "title": "よくある質問", "slug": "troubleshooting/faq" },
+        { "title": "エラーコード一覧", "slug": "troubleshooting/error-codes" }
+      ]
+    }
+  ]
+}
+
+

@@ -1,0 +1,24 @@
+<div class="sidebar-inner">
+  <div class="sidebar-section">
+    <div class="sidebar-title">はじめに</div>
+    {% assign section = site.data.sitemap.sections | where: 'slug', 'getting-started' | first %}
+    {% include nav_list.html items=section.items %}
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">機能ガイド</div>
+    {% assign section = site.data.sitemap.sections | where: 'slug', 'features' | first %}
+    {% include nav_list.html items=section.items %}
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">API リファレンス</div>
+    {% assign section = site.data.sitemap.sections | where: 'slug', 'api' | first %}
+    {% include nav_list.html items=section.items %}
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-title">トラブルシューティング</div>
+    {% assign section = site.data.sitemap.sections | where: 'slug', 'troubleshooting' | first %}
+    {% include nav_list.html items=section.items %}
+  </div>
+</div>
+
+

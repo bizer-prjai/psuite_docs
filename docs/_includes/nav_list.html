@@ -1,0 +1,13 @@
+{% assign items = include.items %}
+<ul class="nav-list">
+  {% for item in items %}
+    <li>
+      <a href="/{{ item.slug | replace: 'index', '' | relative_url }}">{{ item.title }}</a>
+      {% if item.items %}
+        {% include nav_list.html items=item.items %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+
