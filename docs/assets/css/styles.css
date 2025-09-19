@@ -6,23 +6,33 @@
   --brand:#111827;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;line-height:1.6;color:var(--fg);background:var(--bg)}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;line-height:1.75;color:var(--fg);background:var(--bg)}
 .site-header{border-bottom:1px solid var(--border);position:sticky;top:0;background:#fff;z-index:10}
-.site-header .inner{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:24px}
+.site-header .inner{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:32px}
 .brand{font-weight:700;color:var(--brand);text-decoration:none}
-.top-nav a{margin-right:12px;color:var(--fg);text-decoration:none}
-.top-nav a:hover{text-decoration:underline}
-.container{max-width:1100px;margin:0 auto;padding:24px 16px;display:grid;grid-template-columns:260px 1fr;gap:24px}
+.top-nav a{margin-right:16px;color:var(--fg);text-decoration:none}
+.top-nav a:hover{color:#111827}
+.container{max-width:1200px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:260px 1fr 240px;gap:28px}
 .sidebar{border-right:1px solid var(--border)}
-.sidebar-inner{position:sticky;top:60px}
+.sidebar-inner{position:sticky;top:64px}
 .sidebar-title{font-weight:700;margin:16px 0 8px 0}
 .nav-list{list-style:none;padding:0;margin:0}
-.nav-list li{margin:4px 0}
-.nav-list a{color:var(--fg);text-decoration:none}
-.nav-list a:hover{text-decoration:underline}
+.nav-list li{margin:6px 0}
+.nav-list a{color:#374151;text-decoration:none}
+.nav-list a:hover{color:#111827}
 .content{min-width:0}
-.content h1{margin-top:0}
+.content h1{margin-top:0;font-size:28px}
+.content h2{margin-top:28px;font-size:20px;border-bottom:1px solid var(--border);padding-bottom:6px}
+.content h3{margin-top:16px;font-size:16px}
+.toc{border-left:1px solid var(--border)}
+.toc-inner{position:sticky;top:64px;padding-left:16px}
+.toc-title{font-weight:700;margin:0 0 8px 0}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:6px 0}
+.toc-sub{margin-left:12px}
+.toc a{text-decoration:none;color:#6b7280}
+.toc a:hover{color:#111827}
 .footer{border-top:1px solid var(--border);margin-top:32px}
-.footer .inner{max-width:1100px;margin:0 auto;padding:16px;color:var(--muted);font-size:14px}
+.footer .inner{max-width:1200px;margin:0 auto;padding:16px;color:var(--muted);font-size:14px}
 
 

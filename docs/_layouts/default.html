@@ -16,11 +16,38 @@
       <main class="content">
         {{ content }}
       </main>
+      <aside class="toc">
+        <div class="toc-inner">
+          <div class="toc-title">On this page</div>
+          <nav id="toc-list"></nav>
+        </div>
+      </aside>
     </div>
     <footer class="footer">
       <div class="inner">© {{ site.time | date: '%Y' }} PSuite</div>
     </footer>
+    <script>
+      (function(){
+        const content = document.querySelector('.content');
+        if(!content) return;
+        const headings = content.querySelectorAll('h2, h3');
+        const nav = document.getElementById('toc-list');
+        if(!nav || headings.length === 0) return;
+        const ul = document.createElement('ul');
+        ul.className = 'toc-list';
+        headings.forEach(h => {
+          const id = h.id || h.textContent.trim().toLowerCase().replace(/\s+/g,'-');
+          h.id = id;
+          const li = document.createElement('li');
+          li.className = h.tagName === 'H3' ? 'toc-sub' : 'toc-main';
+          const a = document.createElement('a');
+          a.href = '#' + id;
+          a.textContent = h.textContent;
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+        nav.appendChild(ul);
+      })();
+    </script>
   </body>
   </html>
-
-
