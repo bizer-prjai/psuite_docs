@@ -80,3 +80,5 @@ permalink: /zoom/privacy_policy
 ## 15. お問い合わせ窓口
 個人情報の取扱いに関するご質問・ご相談は、以下にご連絡ください。
 - 連絡先: prjai@bizer.jp
+
+

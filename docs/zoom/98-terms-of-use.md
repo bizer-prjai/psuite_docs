@@ -92,3 +92,5 @@ permalink: /zoom/terms_of_use
 
 ## 付則
 - 2025年9月22日 制定
+
+
